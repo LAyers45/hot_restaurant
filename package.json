@@ -1,0 +1,23 @@
+{
+  "name": "hot_restaurant",
+  "version": "1.0.0",
+  "description": "You can use the [editor on GitHub](https://github.com/LAyers45/hot_restaurant/edit/master/README.md) to maintain and preview the content for your website in Markdown files.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LAyers45/hot_restaurant.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LAyers45/hot_restaurant/issues"
+  },
+  "homepage": "https://github.com/LAyers45/hot_restaurant#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
