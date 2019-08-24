@@ -47,10 +47,14 @@ app.post("/tables", function (req, res) {
     res.json(tables);
 });
 
+
 app.post("/reserves", function (req, res) {
     // req.body hosts is equal to the JSON post sent from the user
     // This works because of our body parsing middleware
     tables = req.body;
+
+        res.json(tables);
+    });
 
 
     console.log(tables);
