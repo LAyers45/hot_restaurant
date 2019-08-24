@@ -36,7 +36,7 @@ app.get("/tables", function (req, res) {
 });
 
 // Create reservations - takes in JSON input
-if (tables.length) {
+if (tables.length < 5) {
     app.post("/tables", function (req, res) {
         // req.body hosts is equal to the JSON post sent from the user
         // This works because of our body parsing middleware
@@ -48,6 +48,20 @@ if (tables.length) {
         characters.push(tables);
 
         res.json(tables);
+    });
+}
+if (tables.length >= 5)
+    app.post("/tables", function (req, res) {
+        // req.body hosts is equal to the JSON post sent from the user
+        // This works because of our body parsing middleware
+        var reservations = req.body;
+
+
+        console.log(reservations);
+
+        characters.push(reservations);
+
+        res.json(reservations);
     });
 }
 // Starts the server to begin listening
