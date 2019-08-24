@@ -1,0 +1,22 @@
+body{
+    background: url(../images/rest_back.jpg);
+    width: 100vh;
+    height: 50vh;
+    box-sizing: border-box;
+}
+
+.jumbotron{
+    background-color: transparent;
+    color: whitesmoke;
+}
+
+#jumbo{
+    margin-left: 38%;
+    margin-top: 5%;
+}
+
+.home_button{
+    border-radius: 10px;
+    width: 20%;
+    height: 45px;
+}

@@ -50,7 +50,7 @@ if (tables.length < 5) {
         res.json(tables);
     });
 }
-if (tables.length >= 5)
+if (tables.length >= 5) {
     app.post("/tables", function (req, res) {
         // req.body hosts is equal to the JSON post sent from the user
         // This works because of our body parsing middleware
