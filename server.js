@@ -16,8 +16,6 @@ app.use(express.json());
 // =============================================================
 var tables = [];
 
-var reservations = [];
-
 // Routes
 // =============================================================
 
@@ -36,34 +34,32 @@ app.get("/tables", function (req, res) {
 });
 
 // Create reservations - takes in JSON input
-if (tables.length < 5) {
-    app.post("/tables", function (req, res) {
-        // req.body hosts is equal to the JSON post sent from the user
-        // This works because of our body parsing middleware
-        var tables = req.body;
+app.post("/tables", function (req, res) {
+    // req.body hosts is equal to the JSON post sent from the user
+    // This works because of our body parsing middleware
+    tables = req.body;
 
 
-        console.log(tables);
+    console.log(tables);
 
-        characters.push(tables);
+    tables.push(tables);
 
-        res.json(tables);
-    });
-}
-if (tables.length >= 5)
-    app.post("/tables", function (req, res) {
-        // req.body hosts is equal to the JSON post sent from the user
-        // This works because of our body parsing middleware
-        var reservations = req.body;
+    res.json(tables);
+});
+
+app.post("/reserves", function (req, res) {
+    // req.body hosts is equal to the JSON post sent from the user
+    // This works because of our body parsing middleware
+    tables = req.body;
 
 
-        console.log(reservations);
+    console.log(tables);
 
-        characters.push(reservations);
+    tables.push(tables);
 
-        res.json(reservations);
-    });
-}
+    res.json(tables);
+});
+
 // Starts the server to begin listening
 // =============================================================
 app.listen(PORT, function () {
