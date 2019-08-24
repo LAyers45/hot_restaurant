@@ -85,6 +85,31 @@
   </div>
 
   <script src="server.js"></script>
+  <script type="text/javascript">
+    $("#search-btn").on("click", function () {
+      var searchedTable = $("#table-search").val().trim();
+
+      // Using a RegEx Pattern to remove spaces from searchedCharacter
+      // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+      searchedTable = searchedTable.replace(/\s+/g, "").toLowerCase();
+
+      $.get("/api/table/" + searchedTable, function (data) {
+        console.log(data);
+        if (data) {
+          $("#stats").show();
+          $("#name").text(data.name);
+          $("#phone-number").text(data.phoneNumber);
+          $("#email").text(data.email);
+          $("#unique-id").text(data.uniqueID);
+        } else {
+          $("#Table").text(
+            "The force is not strong with this one. Your character was not found.");
+          $("#stats").hide();
+        }
+      });
+    });
+
+  </script>
 
 </body>
 
